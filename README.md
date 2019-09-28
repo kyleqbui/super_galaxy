@@ -11,16 +11,19 @@ If you see this page in your web browser, then you successfully met the requirem
 Incoming...
 
 
-## Built With
+## Components
 
-* 
-* 
-* 
+* Hosted on Rasberry Pi
+* phpMyAdmin
+* Apache2
+* HTML
+* JavaScript
+* & MORE!
 
 
 ## Creator
 
-* **Kyle Q Bui** - [Kyle Q Bui](https://github.com/kyleqbui)
+* **Kyle Q Bui** - [Kyle Q Bui] (https://github.com/kyleqbui)
 
 ## Acknowledgments
 
