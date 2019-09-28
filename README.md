@@ -15,8 +15,10 @@ M..... and especially the DevOPs/Cloud Enterprise team for giving me another cha
 * Server hosted on Rasberry Pi 2 Model B
 * Apache2
 * phpMyAdmin
+* No-IP for dynamic DNS
 * MySQL
 * HTML
+* CSS
 * JavaScript
 * & MORE!
 
