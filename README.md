@@ -26,4 +26,4 @@ Incoming...
 
 ## Creator
 
-* **Kyle Q Bui** - [Kyle Q Bui] (https://github.com/kyleqbui)
+**Kyle Q Bui** - [Kyle Q Bui] (https://github.com/kyleqbui)
