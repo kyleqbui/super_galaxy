@@ -18,14 +18,9 @@ Incoming...
 * 
 
 
-## Authors
+## Creator
 
-* **Kyle Q Bui** - *Initial work* - [Kyle Q Bui](https://github.com/kyleqbui)
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **Kyle Q Bui** - [Kyle Q Bui](https://github.com/kyleqbui)
 
 ## Acknowledgments
 
