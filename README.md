@@ -1,4 +1,4 @@
-# Website Challenge
+# Website Coding Challenge
 
 I am developing an interactive website from scratch with DevOps practices in less than 48 hours for my dream job.
 
