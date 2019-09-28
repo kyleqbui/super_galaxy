@@ -1,32 +1,29 @@
-Welcome To My
 # Website Challenge
 
 I am developing an interactive website from scratch with DevOps practices in less than 48 hours for my dream job.
 
-## Prerequisites
+## Concept
 
-If you see this page in your web browser, then you successfully met the requirements.
-
-## Testing
-
-Incoming...
-
-
-## Components
-
-* Hosted on Rasberry Pi
-* phpMyAdmin
-* Apache2
-* HTML
-* JavaScript
-* & MORE!
-
-
-## Creator
-
-* **Kyle Q Bui** - [Kyle Q Bui] (https://github.com/kyleqbui)
+* Motivational Website that provides media/quotes for each visitor, while attempting to be personalized as much as possible.
 
 ## Acknowledgments
 
 * M..... and especially the DevOPs/Cloud Enterprise team for giving me another chance to prove myself.
 
+## Components
+
+* Server hosted on Rasberry Pi 2 Model B
+* Apache2
+* phpMyAdmin
+* MySQL
+* HTML
+* JavaScript
+* & MORE!
+
+## Testing
+
+Incoming...
+
+## Creator
+
+* **Kyle Q Bui** - [Kyle Q Bui] (https://github.com/kyleqbui)
