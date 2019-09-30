@@ -4,7 +4,7 @@ I am developing an interactive website from scratch with DevOps practices in les
 
 ## Concept
 
-Motivational Website that provides media/quotes for each visitor, while attempting to be personalized.
+Motivational Website with content that is WIP.
 
 ## Acknowledgments
 
