@@ -58,6 +58,7 @@
       <p><u>Welcome,   Today's Date & Time is Now:</u></p>
       <p id="datetime"></p>
       <!-- gets the time and date per second -->
+      <!-- it also provides a nice little sentences depending on the day -->
       <script>
          var days_array=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
          var month_array=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
@@ -72,7 +73,7 @@
              var minutes=currentdate.getMinutes()
              var seconds=currentdate.getSeconds()
              var period="AM"
-         
+            //converts the numbers
              if (year < 1000)
                  year+=1900
              
@@ -90,7 +91,8 @@
                  minutes="0"+minutes
              if (seconds<=9)
                  seconds="0"+seconds
-         
+            
+             //curdate setup, depending on the day it will provide different string
              var curdate="<font color='000000' face='Roboto Slab'>"+days_array[day]+", "+month_array[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+period+"</font>"
          
              if(days_array[day]=="Sunday"){
@@ -121,7 +123,7 @@
                  var day_string = "<br> - You did it, you breezed by your work week, relax you deserve it!"
                  curdate ="<font color='000000' face='Roboto Slab'>"+days_array[day]+", "+month_array[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+period+"</font>"
              }
-         
+              //contents of the page
              if (document.all)
                  document.all.clock.innerHTML=curdate + day_string
              else if (document.getElementById)
@@ -140,10 +142,12 @@
       </script>
       <span id="clock"></span>
       <!-- end of date and time getter -->
-      <!-- Section BLOG # 1 -->
+      <!-- website section -->
       <section class="article">
+            <!-- headline -->
          <h1>Motivational Guide to Success & Happiness</h1>
          <div class="slide_container" style="max-width: 100%">
+            <!-- slides  -->
             <img class="slides" src="images/smile1.jpg" style="width: 500px;">
             <img class="slides" src="images/smile2.jpg" style="width: 500px;">
             <img class="slides" src="images/smile3.jpg" style="width: 500px;">
@@ -151,7 +155,9 @@
             <img class="slides" src="images/smile5.jpg" style="width: 500px;">
          </div>
          <!-- slideshow of pictures -->
+         <!-- automated slideshow -->
          <script>
+            //continous transition between 5 jpg, every 5 seconds.
             var currentSlide = 0;
             showSlides();
             
@@ -173,6 +179,8 @@
          </script>
          <br>
          <!-- end of script for slideshow -->
+
+         <!-- word block -->
          <h4>Welcome friend, this site was created to assist others who  needs a little push in motivation.</h4>
          <br>
          <blockquote>
@@ -203,20 +211,22 @@
             </ul>
          </div>
          </div>
-         <!-- End Post -->
+         <!-- end post -->
 
-         <!-- Comments -->
+         <!-- comment -->
             
             <h3 class="comment-section">Comments | Concerns<small class="number"></small></h3>
 
 
-         <!-- Add Comment -->
+         <!-- more comment -->
          <div class="comment-boxes">
             <h4>
                 Share your story with me!
             </h4>
 
 <!-- Form -->
+<!-- this action runs the php script with POST to mysqlDB -->
+<!-- proper name is given as that input -->
 <form action="insertDB_Comments.php" method="POST">
     <div class="row mb-20 mb-md-10">
     <div class="col-md-6 mb-md-10">
@@ -247,7 +257,7 @@
 </button>
 <!-- End Form -->
 </form>
-            <!-- End Form -->
+
       </section>
       <!-- End Section -->
       
@@ -257,20 +267,21 @@
       <div id="map" style="width: 400px; height: 400px;"></div>
      
 
-      <!-- script api code to locate my location -->
+      <!-- script api code to locate my location, thanks google. -->
       <!-- if none is given, then it will default to the properties of the map var -->
       <script>
       var map, infoWindow;
       var place;
       
-
+      //default map setup, with Richmond coords, loads prior to gaining permissions.
       map = new google.maps.Map(document.getElementById('map'),{
           center: {lat: 37.5407, lng: -77.4360},
           zoom: 15
         });
 
+      //creates a new google maps window after permissions are successfully granted.
       infoWindow = new google.maps.InfoWindow;
-
+      //uses HTML5 geolocation then imports the latitude/longitude numbers to make the new window
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
           var pos = {
@@ -281,13 +292,14 @@
           infoWindow.setContent('Location found.');
           infoWindow.open(map);
           map.setCenter(pos);
+
         }, function(){
           handleLocationError(true, infoWindow, map.getCenter());
         });
       }else{
         handleLocationError(false, infoWindow,map.getCenter());
       }
-
+      //will let the user if there was an error in granting permissions
       function handleLocationError(browswerHasGeolocation, infoWindow, pos){
         infoWindow.setPosition(pos);
         infoWindow.setContent(browswerHasGeolocation ?
@@ -299,7 +311,6 @@
 
       </script>
       </div>
-
       <!-- Footer -->
       <footer class="page-section bg-gray-lighter footer pb-60">
       <div class="container">
