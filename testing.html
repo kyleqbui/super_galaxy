@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>newleaf: Motivational Blogging</title>
+      <title>newleaf: Motivational Website</title>
       <!-- meta tags -->
       <meta name="description" content="">
       <meta name="keywords" content="">
@@ -19,7 +19,11 @@
       <link rel="stylesheet" href="css/normalize.css">
       <!-- Import JS -->
       <script type="text/javascript" src="js/main.js"></script>
-      <script type="text/javascript" src="js/plugin.js"></script>
+      <!-- <script type="text/javascript" src="js/plugin.js"></script> -->
+      <!-- google maps api -->
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaWHK0nXlWfNAy9QhqwbeEKOrUe-SWUog&libraries=places"></script>
+      
+
    </head>
    <!-- end of head -->
    <!-- start of body -->
@@ -218,7 +222,7 @@
     <div class="col-md-6 mb-md-10">
 
 <!-- Name -->
-    <input type="text" name="name" id="name" class="input-md form-control" placeholder="Name *" maxlength="3" required>
+    <input type="text" name="name" id="name" class="input-md form-control" placeholder="Name *" maxlength="30" required>
     </div>
                   
 <div class="col-md-20">
@@ -229,7 +233,7 @@
 
 <!-- Comment -->
 <div class="mb-30 mb-md-10">
-<textarea name="comments" id="text" class="input-md form-control" rows="7" placeholder="How did this site help you?" maxlength="250"></textarea>
+<textarea name="comments" id="text" class="input-md form-control" rows="7" placeholder="How did this site help you?" maxlength="100" required></textarea>
 </div>
 
 <!-- Send Button -->
@@ -246,14 +250,57 @@
             <!-- End Form -->
       </section>
       <!-- End Section -->
+      
+      <!-- google place api -->
+      <div class="googlemapview">
+      <h2>Explore around you!</h2>
+      <div id="map" style="width: 400px; height: 400px;"></div>
+     
 
+      <!-- script api code to locate my location -->
+      <!-- if none is given, then it will default to the properties of the map var -->
+      <script>
+      var map, infoWindow;
+      var place;
+      
 
+      map = new google.maps.Map(document.getElementById('map'),{
+          center: {lat: 37.5407, lng: -77.4360},
+          zoom: 15
+        });
 
+      infoWindow = new google.maps.InfoWindow;
 
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position){
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          infoWindow.open(map);
+          map.setCenter(pos);
+        }, function(){
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      }else{
+        handleLocationError(false, infoWindow,map.getCenter());
+      }
 
+      function handleLocationError(browswerHasGeolocation, infoWindow, pos){
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browswerHasGeolocation ?
+                              'Error: Geolocation service failed.' :
+                              'Error: Browser not supported.'
+                              );
+        infoWindow.open(map);
+      }
 
+      </script>
+      </div>
 
-      <!-- Foter -->
+      <!-- Footer -->
       <footer class="page-section bg-gray-lighter footer pb-60">
       <div class="container">
       <!-- Footer Logo -->
@@ -261,16 +308,7 @@
       <h4>Have A Nice Day!</h4>
       <!-- End Footer Logo -->
       
-      <!-- social profiles -->
-      <div class="social links">
-      <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-      <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-      <a href="#" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
-      <a href="#" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
-      </div>
-      <!-- end of social -->  
-      
-
+     
       <!-- Copyright with linkedin -->
       <div>
       <a href="https://www.linkedin.com/in/kyleqbui/" target="_blank">&copy;2019 Thanks For The Challenge, Inc.</a>

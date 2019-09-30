@@ -33,15 +33,16 @@ if(!empty($name) || !empty($email) || !empty($comments)){
 			$stmt->bind_param("sss", $name, $email,$comments);
 			$stmt->execute();
 
-			echo "OK, new record inserted successfully";
+			
+			header('Location: http://newleaf.onthewifi.com/thanks.html');
 		}
 		else{
-			echo "I haven't replied to your email yet, let me do that before you send another one, thanks for understanding.";
+				header('Location: http://newleaf.onthewifi.com/oops.html');
 		}
 	}
 }
 else{
-	echo "All Fields are Required, Thanks!";
+	header('Location: http://newleaf.onthewifi.com/oops.html');
 	die();}
 
 ?>
