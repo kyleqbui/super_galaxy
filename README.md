@@ -21,7 +21,6 @@ M..... and especially the DevOPs/Cloud Enterprise team for giving me another cha
 * CSS
 * JavaScript
 * PHP
-* Sublime Text
 
 ## Testing
 
