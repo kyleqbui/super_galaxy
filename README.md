@@ -22,10 +22,6 @@ M..... and especially the DevOPs/Cloud Enterprise team for giving me another cha
 * JavaScript
 * PHP
 
-## Testing
-
-* Selenium
-
 ## Creator
 
 **Kyle Q Bui** (https://github.com/kyleqbui)
