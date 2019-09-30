@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>newleaf: Motivational Blogging</title>
+      <!-- meta tags -->
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+      <meta name="author" content="Kyle Bui">
+      <meta name="keywords" content="motivation, quotes, newleaf, success, happiness, life">
+      <meta http-equiv="refresh" content="30">
+      <!-- Import Font Roboto From Google -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+      <!-- Favicons & Images-->
+      <link rel="shortcut icon" href="images/NewLeafLogo.png">
+      <!-- Import CSS-->
+      <link rel="stylesheet" href="css/test.css">
+      <link rel="stylesheet" href="css/normalize.css">
+      <!-- Import JS -->
+      <script type="text/javascript" src="js/main.js"></script>
+      <script type="text/javascript" src="js/plugin.js"></script>
+   </head>
+   <!-- end of head -->
+   <!-- start of body -->
+   <body onLoad="gettheinfo()">
+      <br>
+      <div class="header">
+         <!-- Website Logo and Name -->
+         <img src="images/logo&name.png" width="400px" height="80px" align="center">
+         <p style= "text-align: left;"><em>" Turning Over a New Leaf in Life! "</em></p>
+      </div>
+      <!-- End of Header -->
+      <!-- Navigation Bar-->
+      <nav>
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="404.html">Goal</a></li>
+            <li><a href="#">Surprise Me!</a></li>
+            <li>
+               <a href="#">About Me</a>
+               <ul>
+                  <li><a href="https://github.com/kyleqbui/thanks_for_the_challenge">GitHub</a></li>
+                  <li><a href="https://www.linkedin.com/in/kyleqbui/">Linkedin</a></li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
+      <!-- end of nav bar -->
+      <!-- Page Loading Tree -->        
+      <!-- add loading once i figure it out -->
+      <!-- End Page Loader -->
+      <!-- date and time getter -->
+      <p><u>Welcome,   Today's Date & Time is Now:</u></p>
+      <p id="datetime"></p>
+      <!-- gets the time and date per second -->
+      <script>
+         var days_array=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+         var month_array=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+         
+         function getthedate(){
+             var currentdate=new Date()
+             var year=currentdate.getYear()
+             var day=currentdate.getDay()
+             var month=currentdate.getMonth()
+             var daym=currentdate.getDate()
+             var hours=currentdate.getHours()
+             var minutes=currentdate.getMinutes()
+             var seconds=currentdate.getSeconds()
+             var period="AM"
+         
+             if (year < 1000)
+                 year+=1900
+             
+             if (daym<10)
+                 daym="0"+daym
+         
+             if (hours>=12)
+                 period="PM"
+             if (hours>12){
+                 hours=hours-12
+             }
+             if (hours==0)
+                 hours=12
+             if (minutes<=9)
+                 minutes="0"+minutes
+             if (seconds<=9)
+                 seconds="0"+seconds
+         
+             var curdate="<font color='000000' face='Roboto Slab'>"+days_array[day]+", "+month_array[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+period+"</font>"
+         
+             if(days_array[day]=="Sunday"){
+                 var day_string = "<br> - It is Sunday Funday, hang out and do something enjoyable today!"
+                 curdate ="<font color='000000' face='Roboto Slab'>"+days_array[day]+", "+month_array[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+period+"</font>"
+             }
+             if(days_array[day]=="Monday"){
+                 var day_string = "<br> - Start your week off strong, you got this!"
+                 curdate ="<font color='000000' face='Roboto Slab'>"+days_array[day]+", "+month_array[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+period+"</font>"
+             }
+             if(days_array[day]=="Tuesday"){
+                 var day_string = "<br> - You did well yesterday, try something new today!"
+                 curdate ="<font color='000000' face='Roboto Slab'>"+days_array[day]+", "+month_array[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+period+"</font>"
+             }
+             if(days_array[day]=="Wednesday"){
+                 var day_string = "<br> - Take a quick breather, you're halfway there, keep up the great work!"
+                 curdate ="<font color='000000' face='Roboto Slab'>"+days_array[day]+", "+month_array[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+period+"</font>"
+             }
+             if(days_array[day]=="Thursday"){
+                 var day_string = "<br> - Feeling thristy, remember to stay well hydrated friend!"
+                 curdate ="<font color='000000' face='Roboto Slab'>"+days_array[day]+", "+month_array[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+period+"</font>"
+             }
+             if(days_array[day]=="Friday"){
+                 var day_string = "<br> - The weekend upon us, just one last push!"
+                 curdate ="<font color='000000' face='Roboto Slab'>"+days_array[day]+", "+month_array[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+period+"</font>"
+             }
+             if(days_array[day]=="Saturday"){
+                 var day_string = "<br> - You did it, you breezed by your work week, relax you deserve it!"
+                 curdate ="<font color='000000' face='Roboto Slab'>"+days_array[day]+", "+month_array[month]+" "+daym+", "+year+" "+hours+":"+minutes+":"+seconds+" "+period+"</font>"
+             }
+         
+             if (document.all)
+                 document.all.clock.innerHTML=curdate + day_string
+             else if (document.getElementById)
+                 document.getElementById("clock").innerHTML=curdate +day_string
+             else
+                 document.write(curdate + day_string)}
+         
+             if (!document.all&&!document.getElementById)
+                 getthedate()
+             
+         
+         function gettheinfo(){
+         if (document.all||document.getElementById)
+         setInterval("getthedate()",1000)
+         }
+      </script>
+      <span id="clock"></span>
+      <!-- end of date and time getter -->
+      <!-- Section BLOG # 1 -->
+      <section class="article">
+         <h1>Motivational Guide to Success & Happiness</h1>
+         <div class="slide_container" style="max-width: 100%">
+            <img class="slides" src="images/smile1.jpg" style="width: 500px;">
+            <img class="slides" src="images/smile2.jpg" style="width: 500px;">
+            <img class="slides" src="images/smile3.jpg" style="width: 500px;">
+            <img class="slides" src="images/smile4.jpg" style="width: 500px;">
+            <img class="slides" src="images/smile5.jpg" style="width: 500px;">
+         </div>
+         <!-- slideshow of pictures -->
+         <script>
+            var currentSlide = 0;
+            showSlides();
+            
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("slides");
+                
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                currentSlide++;
+                
+                if (currentSlide > slides.length) {currentSlide = 1}    
+                
+                slides[currentSlide-1].style.display = "block";  
+                setTimeout(showSlides, 5000); 
+                // every 5 seconds it changes index/picture
+            }
+         </script>
+         <br>
+         <!-- end of script for slideshow -->
+         <h4>Welcome friend, this site was created to assist others who  needs a little push in motivation.</h4>
+         <br>
+         <blockquote>
+            <br>
+            <p>“The only limits in our life are those that we impose on ourselves.”</p>
+            <footer> 
+               <cite title="Source Title">- Bob Proctor </cite>
+            </footer>
+            <br>
+         </blockquote>
+         <div class="guide">
+            <h2>
+               Here are some steps to get you started:
+            </h2>
+            <ul>
+               <li><b><u>Giving</u></b></li>
+               <p>Do Things for others.  |  If you are not the giving type, give it a try, start small and work your way up; volunteering works too.</p>
+               <li><b><u>Relating</u></b></li>
+               <p>Connecting with people.  |  Reach out to someone you haven't spoke to in a while, even simple text can go along way.</p>
+               <li><b><u>Exercising</u></b></li>
+               <p>Take care of your physical wellbeing.  | Your mental health correlates with your body, keeping your body in shape is an amazing stress reliever.  </p>
+               <li><b><u>Appreciating</u></b></li>
+               <p>Notice the environment that surrounds you.  |  Don't stay indoors all day, try scrolling through your neighborhood and do some sight seeing.</p>
+               <li><b><u>Resilience</u></b></li>
+               <p>Get back up and do it better.  |  It is okay to fail, because that is the first step to success, keep going!</p>
+               <li><b><u>Meaning</u></b></li>
+               <p>See the bigger picture.  |  Take on a huge task like starting new hobbies, that new car you want, or creating a family, whatever it is you have something to work towards.</p>
+            </ul>
+         </div>
+         </div>
+         <!-- End Post -->
+
+         <!-- Comments -->
+            
+            <h3 class="comment-section">Comments | Concerns<small class="number"></small></h3>
+
+
+         <!-- Add Comment -->
+         <div class="comment-boxes">
+            <h4>
+                Share your story with me!
+            </h4>
+
+<!-- Form -->
+<form action="insertDB_Comments.php" method="POST">
+    <div class="row mb-20 mb-md-10">
+    <div class="col-md-6 mb-md-10">
+
+<!-- Name -->
+    <input type="text" name="name" id="name" class="input-md form-control" placeholder="Name *" maxlength="3" required>
+    </div>
+                  
+<div class="col-md-20">
+<!-- Email -->
+<input type="email" name="email" id="email" class="input-md form-control" placeholder="Email Address *" maxlength="30" required>
+</div>
+</div>
+
+<!-- Comment -->
+<div class="mb-30 mb-md-10">
+<textarea name="comments" id="text" class="input-md form-control" rows="7" placeholder="How did this site help you?" maxlength="250"></textarea>
+</div>
+
+<!-- Send Button -->
+<button type="submit" class="btn btn-mod btn-medium">
+    <b>Send the love!</b>
+</button>
+
+<!--Reset Button-->
+<button type="reset" class="btn btn-mod btn-medium">
+    <small>Whoops</small>
+</button>
+<!-- End Form -->
+</form>
+            <!-- End Form -->
+      </section>
+      <!-- End Section -->
+
+
+
+
+
+
+
+      <!-- Foter -->
+      <footer class="page-section bg-gray-lighter footer pb-60">
+      <div class="container">
+      <!-- Footer Logo -->
+      <div class="footer">
+      <h4>Have A Nice Day!</h4>
+      <!-- End Footer Logo -->
+      
+      <!-- social profiles -->
+      <div class="social links">
+      <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="#" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
+      <a href="#" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
+      </div>
+      <!-- end of social -->  
+      
+
+      <!-- Copyright with linkedin -->
+      <div>
+      <a href="https://www.linkedin.com/in/kyleqbui/" target="_blank">&copy;2019 Thanks For The Challenge, Inc.</a>
+      </div>
+      <!-- End Copyright -->
+
+      <div>
+        <p>Motivation for those who need it most!</p>
+      </div>
+
+      </div>
+      <!-- End Footer Text --> 
+      </div>
+
+
+      <!-- back to top -->
+      <!-- for the lazy scrollers -->
+      <br><br>
+      <div class= "bottom">
+      <a href="#top"><p>Scotty, Beam Me Up!</p></a>
+      </div>
+      <!-- End Top Link -->
+
+
+      </footer>
+      <!-- End Foter -->
+      </div>
+   </body>
+   <!-- end of page body --> 
+</html>
