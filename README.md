@@ -20,11 +20,12 @@ M..... and especially the DevOPs/Cloud Enterprise team for giving me another cha
 * HTML
 * CSS
 * JavaScript
-* & MORE!
+* PHP
+* Sublime Text
 
 ## Testing
 
-Incoming...
+* Selenium
 
 ## Creator
 
