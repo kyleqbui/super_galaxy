@@ -1,6 +1,6 @@
 # Website Coding Challenge
 
-I am developing an interactive website from scratch with DevOps practices in less than 48 hours for my dream job.
+I am developing an interactive website from scratch with DevOps practices in less than 48 hours for a dream job.
 
 ## Concept
 
@@ -8,7 +8,7 @@ Motivational Website with content that is WIP.
 
 ## Acknowledgments
 
-M..... and especially the DevOPs/Cloud Enterprise team for giving me another chance to prove myself.
+Unfortunately, I didn't get the job, but I learned a lot.
 
 ## Components
 
